@@ -10,6 +10,9 @@ services:
             - "/srv/nginx/etc/includes:/etc/nginx/includes"
             - "/srv/nginx/www:/var/www"
             - "/srv/letsencrypt:/etc/letsencrypt"
+        depends_on:
+            - "gogs"
+            - "artifactory"
     gogs:
         image: gogs/gogs
         ports:
